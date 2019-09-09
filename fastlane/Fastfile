@@ -1,0 +1,37 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+
+  desc "Description of what the lane does"
+
+  lane :beta do
+    run_tests(scheme: "ZenlaneTests",
+              code_coverage: true)
+    slack(
+      message: "Beta lane finished!",
+      slack_url: "PLACE YOUR SLACK URL HERE",
+      channel: "#zenput_testing",  # Optional, by default will post to the default channel configured for the POST URL.
+      success: true,        # Optional, defaults to true.
+      payload: {  # Optional, lets you specify any number of your own Slack attachments.
+        "Build Date" => Time.new.to_s,
+        "Built by" => "CircleCI",
+      }
+    )
+  end
+
+end

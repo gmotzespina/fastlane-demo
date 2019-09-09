@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='ZenlaneTests.xctest' tests='2' failures='0'>
+  <testsuite name='ZenlaneTests.ZenlaneTests' tests='2' failures='0'>
+    <testcase classname='ZenlaneTests.ZenlaneTests' name='testExample' time='0.003'/>
+    <testcase classname='ZenlaneTests.ZenlaneTests' name='testPerformanceExample' time='84.701'/>
+  </testsuite>
+</testsuites>
